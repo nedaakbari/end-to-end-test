@@ -8,8 +8,10 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 public class TestOnLocalApi {
-
+//این <test> خودش به یک thread اختصاص پیدا می‌کنه و داخل کلاس تست، تست‌ها پشت سر هم اجرا میشن
+// مگر اینکه داخل کلاس از threadPoolSize استفاده کرده باشیم.
     @Test
+//    @Test(threadPoolSize = 2, invocationCount = 2)
     void getUsers() {
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++start TestOnLocalApi  getUsers");
         baseURI = "http://localhost:3000";
