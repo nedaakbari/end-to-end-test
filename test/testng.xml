@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="methods" thread-count="4">
+    <test verbose="2" preserve-order="true" name="D:/project/tes/test">
+        <classes>
+            <class name="ir.mohaymen.test.TestOnLocalApi">
+                <methods>
+                    <include name="getUsers"/>
+                    <include name="postUser"/>
+                </methods>
+            </class>
+            <class name="ir.mohaymen.test.ATestApi2">
+                <methods>
+                    <include name="TestApi2"/>
+                </methods>
+            </class>
+            <class name="ir.mohaymen.test.DiffrenceData">
+                <methods>
+                    <include name="testApiWithDifferentData"/>
+                    <include name="testApi1"/>
+                </methods>
+            </class>
+            <class name="ir.mohaymen.test.TestParallel">
+                <methods>
+                    <include name="getUsers2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
