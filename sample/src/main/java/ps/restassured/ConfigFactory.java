@@ -10,6 +10,8 @@ import io.restassured.listener.ResponseValidationFailureListener;
 import static io.restassured.config.FailureConfig.failureConfig;
 import static io.restassured.config.RedirectConfig.*;
 
+//https://github.com/andrejs-ps
+//https://api.github.com/
 public class ConfigFactory {
 
     public static RestAssuredConfig getDefaultConfig() {
