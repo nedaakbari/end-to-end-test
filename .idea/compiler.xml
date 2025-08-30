@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sample" />
         <module name="sample3" />
+        <module name="junitassured" />
         <module name="sample2" />
       </profile>
     </annotationProcessing>
