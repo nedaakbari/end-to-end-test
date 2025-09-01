@@ -22,6 +22,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!--        بهت اجازه می‌ده آنوتیشن‌هایی مثل @Epic, @Feature, @Story, @Step و ... رو توی تست‌هات بذاری و Allure اینا رو بخونه.
         وقتی تست رو با TestNG اجرا می‌کنی، نتیجه‌ها (pass/fail/skip) و گزارش‌ها با فرمت قابل مصرف برای Allure ذخیره می‌شن. -->
         <dependency>

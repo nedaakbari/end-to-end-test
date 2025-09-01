@@ -28,6 +28,30 @@ public class Setup {
 
 
 
+
+
+
+    public static RequestSpecification shahkarRequestSpec =
+            new RequestSpecBuilder()
+                    .setBaseUri("https://localhost:8080")
+                    .setContentType(ContentType.JSON)
+                    .log(LogDetail.ALL)
+                    .addFilter(new AllureRestAssuredFilter())
+                    .build();
+
+    public static ResponseSpecification shahkarResponseSpec = new ResponseSpecBuilder()
+            .expectContentType(ContentType.JSON)
+            .expectStatusCode(200)
+            .log(LogDetail.ALL)
+            .build();
+
+
+
+
+
+
+
+
     public static RequestSpecification requestSpecification2 =
             RestAssured
                     .given().
