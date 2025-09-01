@@ -8,10 +8,15 @@
         <option value="$PROJECT_DIR$/sample2/pom.xml" />
         <option value="$PROJECT_DIR$/sample3/pom.xml" />
         <option value="$PROJECT_DIR$/junitassured/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/ReportPortalTest/pom.xml" />
+        <option value="$PROJECT_DIR$/api-testing-project/pom.xml" />
+        <option value="$PROJECT_DIR$/logger-java-rest-assured/pom.xml" />
+        <option value="$PROJECT_DIR$/sample4/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" project-jdk-name="22" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

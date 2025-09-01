@@ -1,0 +1,48 @@
+version: '3.5'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
+    container_name: rp_elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+
+  mongo:
+    image: mongo:5.0
+    container_name: rp_mongo
+    ports:
+      - "27017:27017"
+
+  reportportal:
+    image: reportportal/service-ui:5.12.0
+    container_name: rp_ui
+#    depends_on:
+#      - elasticsearch
+#      - mongo
+    environment:
+      - RP_UI_SERVER=ui
+      - RP_SERVER=api
+      - RP_DB_HOST=mongo
+      - RP_DB_PORT=27017
+      - RP_ES_HOST=elasticsearch
+      - RP_ES_PORT=9200
+    ports:
+      - "8080:8080"
+
+  api:
+    image: reportportal/service-api:5.12.0
+    container_name: rp_api
+    depends_on:
+      - mongo
+      - elasticsearch
+    environment:
+      - RP_DB_HOST=mongo
+      - RP_DB_PORT=27017
+      - RP_ES_HOST=elasticsearch
+      - RP_ES_PORT=9200
+      - RP_AUTH_MODE=basic
+    ports:
+      - "8081:8080"

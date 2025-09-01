@@ -1,6 +1,7 @@
 package psrestassured.m4params;
 
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -24,11 +25,10 @@ public class ParameterizedTestDemo {
     @Test(dataProvider = "queryParams")
     void dataDrivenTest(Map<String, String> params, int expectedRepoCount) {
 
-        var json =
-                RestAssured
-                        .given()
-                        .params(params)
-                        .get(SEARCH_EP).jsonPath();
+        JsonPath json = RestAssured
+                .given()
+                .params(params)
+                .get(SEARCH_EP).jsonPath();
 
         Assert.assertEquals(json.getInt("items.size()"), 4);
     }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-01T20:33:30 IRST" name="APITestSuite" finished-at="2025-09-01T20:33:40 IRST" duration-ms="10860">
+    <groups>
+    </groups>
+    <test started-at="2025-09-01T20:33:30 IRST" name="UserTests" finished-at="2025-09-01T20:33:32 IRST" duration-ms="2650">
+      <class name="tests.UserApiTest">
+        <test-method signature="testGetUserById(int,java.lang.String)[pri:0, instance:tests.UserApiTest@6aba2b86]" started-at="2025-09-01T20:33:30 IRST" name="testGetUserById" data-provider="userData" finished-at="2025-09-01T20:33:32 IRST" duration-ms="2009" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Leanne Graham]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetUserById -->
+        <test-method signature="testGetUserById(int,java.lang.String)[pri:0, instance:tests.UserApiTest@6aba2b86]" started-at="2025-09-01T20:33:32 IRST" name="testGetUserById" data-provider="userData" finished-at="2025-09-01T20:33:32 IRST" duration-ms="475" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ervin Howell]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetUserById -->
+        <test-method signature="testGetUserById2()[pri:0, instance:tests.UserApiTest@6aba2b86]" started-at="2025-09-01T20:33:32 IRST" name="testGetUserById2" finished-at="2025-09-01T20:33:32 IRST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetUserById2 -->
+      </class> <!-- tests.UserApiTest -->
+    </test> <!-- UserTests -->
+    <test started-at="2025-09-01T20:33:30 IRST" name="ApiTests" finished-at="2025-09-01T20:33:40 IRST" duration-ms="10053">
+      <class name="tests.ApiTest">
+        <test-method signature="sample()[pri:0, instance:tests.ApiTest@4c371370]" started-at="2025-09-01T20:33:30 IRST" name="sample" finished-at="2025-09-01T20:33:40 IRST" duration-ms="10013" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample -->
+      </class> <!-- tests.ApiTest -->
+    </test> <!-- ApiTests -->
+    <test started-at="2025-09-01T20:33:30 IRST" name="ProductTests" finished-at="2025-09-01T20:33:40 IRST" duration-ms="10859">
+      <class name="tests.ProductApiTest">
+        <test-method signature="testGetProduct()[pri:0, instance:tests.ProductApiTest@4562e04d]" started-at="2025-09-01T20:33:30 IRST" name="testGetProduct" finished-at="2025-09-01T20:33:40 IRST" duration-ms="10824" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetProduct -->
+      </class> <!-- tests.ProductApiTest -->
+    </test> <!-- ProductTests -->
+  </suite> <!-- APITestSuite -->
+</testng-results>

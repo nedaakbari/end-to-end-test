@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>org.example</groupId>
+    <artifactId>sample4</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>sample4</name>
+    <description>sample4</description>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--        بهت اجازه می‌ده آنوتیشن‌هایی مثل @Epic, @Feature, @Story, @Step و ... رو توی تست‌هات بذاری و Allure اینا رو بخونه.
+        وقتی تست رو با TestNG اجرا می‌کنی، نتیجه‌ها (pass/fail/skip) و گزارش‌ها با فرمت قابل مصرف برای Allure ذخیره می‌شن. -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.29.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!--        لاگ‌های request/response (هدرها، بادی، استاتوس کد و ...) رو به گزارش Allure اضافه می‌کنه.
+        خیلی کاربردیه وقتی تست API داری و می‌خوای توی گزارش Allure همه‌ی جزئیات request/response رو هم ببینی.-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>2.25.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!--        در واقع allure-testng و allure-rest-assured خودشون روی همین commons ساخته شدن.-->
+        <!--            <dependency>
+                        <groupId>io.qameta.allure</groupId>
+                        <artifactId>allure-java-commons</artifactId>
+                        <version>2.15.0</version>
+                    </dependency>-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <!--                <version>5.5.6</version>-->
+            <!--            <scope>test</scope>-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.11.0</version>
+            <!--            <scope>test</scope>-->
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <!--                <version>2.13.1</version>-->
+        </dependency>
+
+        <dependency>
+            <groupId>ir.huri</groupId>
+            <artifactId>JalaliCalendar</artifactId>
+            <version>1.3.3</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
+                    <parallel>methods</parallel> <!-- یا classes یا both -->
+<!--                    <parallel>classes</parallel>-->
+<!--                    <parallel>classes</parallel>-->
+                    <threadCount>8</threadCount>
+                    <forkCount>1</forkCount> <!-- تعداد processها -->
+                    <reuseForks>true</reuseForks>
+<!--                    <parallel>methods</parallel>-->
+<!--                    <threadCount>4</threadCount>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.12.0</version>
+<!--                <configuration>-->
+<!--                    <resultsDirectory>target/allure-results</resultsDirectory>-->
+<!--                </configuration>-->
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
