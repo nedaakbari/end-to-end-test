@@ -1,10 +1,7 @@
 package org.example.sample4.shahkar.mobile;
 
 import com.google.gson.Gson;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -29,7 +26,14 @@ public class MobilePutWithMobileLimitTest {//todo how much can i run this?
     public void setUp() {
         RestAssured.filters(new AllureRestAssured());
     }
-
+//    Epic → Authentication
+//    Feature → Login
+//    Story → Login with valid credentials
+//    Story → Login with invalid password
+//    Feature → Registration
+//    Story → Register with email
+//    Story → Register with mobile number
+@Epic("")
     @Test(description = "To get the result of post with for 10 time mobile service call ", priority = 1)
     @Story("POST Request with Valid post requestId")
     @Severity(SeverityLevel.CRITICAL)
